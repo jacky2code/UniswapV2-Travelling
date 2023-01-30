@@ -2,10 +2,11 @@
  * Author: GKing
  * Date: 2022-07-14 02:47:54
  * @LastEditors: GKing
- * @LastEditTime: 2023-01-09 13:36:31
+ * @LastEditTime: 2023-01-30 11:54:11
  * Description: 
  * TODO: 
  */
+ 
 // SPDX-License-Identifier: MIT
 pragma solidity =0.5.16;
 
@@ -23,6 +24,9 @@ contract UniswapV2Factory is IUniswapV2Factory {
     // 所有配对数据数组
     address[] public allPairs;
     // 事件：配对创建
+    // pair: 配对合约部署到的地址
+    // uint: 所有配对合约的长度，即 allpaires 长度。
+    // 获取配对合约序号，如第一个创建的配对合约，序号为len(allPairs) 1;
     event PairCreated(address indexed token0, address indexed token1, address pair, uint);
 
     /**

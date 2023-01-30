@@ -4,17 +4,17 @@ Uniswap 全链通
 
 - [白皮书中文翻译](https://github.com/yeefea/uniswap-whitepapers-cn/blob/master/uniswap_v2.md) 
 
-- 合约
+- Contracts 合约
 
-  - 路由合约
+  - Router Contract 路由合约
 
-    查找路由合约
+    Find the Router Contract 查找路由合约
 
     - etherscan 标题栏 more-燃料搜索器中查找 Uniswap V2: Router 2
-    - 或者直接搜索：Uniswap V2: Router 2
-    - 合约地址为：0x7a250d5630b4cf539739df2c5dacb4c659f2488d
+    - Search "Uniswap V2: Router 2" directly 或者直接搜索：Uniswap V2: Router 2
+    - Contract address 合约地址为：0x7a250d5630b4cf539739df2c5dacb4c659f2488d
   
-  - 工厂合约
+  - Factory Contract 工厂合约
   
     查找到路由合约后，在路由主合约中的构造方法第一个参数就是工厂合约地址
     
