@@ -1,6 +1,6 @@
-Uniswap 全链通
+# Uniswap 全链通
 
-## 准备物料
+## Prepare 准备物料
 
 - [白皮书中文翻译](https://github.com/yeefea/uniswap-whitepapers-cn/blob/master/uniswap_v2.md) 
 
@@ -78,3 +78,30 @@ Uniswap 全链通
   - uniswap - sdk
   - 知识点
     - 从 github 找到历史提交 
+
+
+
+## Contracts Explanation 合约解释
+
+### UniswapV2Factory 工厂合约
+
+#### Variables and Events 变量和事件
+
+```solidity
+// 收税地址
+address public feeTo;
+// 收税地址的设置地址
+address public feeToSetter;
+// 配对映射，地址 => (地址 => 地址)
+mapping(address => mapping(address => address)) public getPair;
+// 所有配对数据数组
+address[] public allPairs;
+// 事件：配对创建
+// pair: 配对合约部署到的地址
+// uint: 所有配对合约的长度，即 allpaires 长度。
+// 获取配对合约序号，如第一个创建的配对合约，序号为 (allPairs.length) 1;
+event PairCreated(address indexed token0, address indexed token1, address pair, uint);
+```
+
+
+

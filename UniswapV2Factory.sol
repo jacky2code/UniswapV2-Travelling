@@ -1,8 +1,16 @@
 /**
+ * @Author: GKing
+ * @Date: 2022-07-14 02:47:54
+ * @LastEditors: GKing
+ * @LastEditTime: 2023-01-30 12:04:09
+ * @Description: 
+ * @TODO: 
+ */
+/**
  * Author: GKing
  * Date: 2022-07-14 02:47:54
  * @LastEditors: GKing
- * @LastEditTime: 2023-01-30 11:54:11
+ * @LastEditTime: 2023-01-30 12:01:23
  * Description: 
  * TODO: 
  */
@@ -26,12 +34,12 @@ contract UniswapV2Factory is IUniswapV2Factory {
     // 事件：配对创建
     // pair: 配对合约部署到的地址
     // uint: 所有配对合约的长度，即 allpaires 长度。
-    // 获取配对合约序号，如第一个创建的配对合约，序号为len(allPairs) 1;
+    // 获取配对合约序号，如第一个创建的配对合约，序号为 (allPairs.length) 1;
     event PairCreated(address indexed token0, address indexed token1, address pair, uint);
 
     /**
      * @dev: 构造方法
-     * @param: _feeToSetter 收税地址的设置地址
+     * @param: _feeToSetter feeTo收税地址的设置地址
      * @return none
      */      
     constructor(address _feeToSetter) public {
@@ -45,6 +53,12 @@ contract UniswapV2Factory is IUniswapV2Factory {
         return allPairs.length;
     }
 
+    /**
+    * @param tokenA TokenA
+    * @param tokenB TokenB
+    * @return pair 配对地址
+    * @dev 创建配对
+    */
     function createPair(address tokenA, address tokenB) external returns (address pair) {
         require(tokenA != tokenB, 'UniswapV2: IDENTICAL_ADDRESSES');
         (address token0, address token1) = tokenA < tokenB ? (tokenA, tokenB) : (tokenB, tokenA);
